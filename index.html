@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Tài Xỉu - Full</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Game Tài Xỉu</h1>
+      <div class="balance">Số dư: <span id="balance">100000</span>đ</div>
+      <button onclick="openDepositModal()">Nạp tiền</button>
+    </div>
+
+    <div class="betting-area">
+      <div class="bet-options">
+        <button onclick="selectBet('tai')">Tài</button>
+        <button onclick="selectBet('xiu')">Xỉu</button>
+      </div>
+      <div class="amount-buttons">
+        <button onclick="addAmount(1000)">1k</button>
+        <button onclick="addAmount(10000)">10k</button>
+        <button onclick="addAmount(50000)">50k</button>
+        <button onclick="addAmount(100000)">100k</button>
+        <button onclick="addAmount(500000)">500k</button>
+        <button onclick="addAmount(1000000)">1m</button>
+        <button onclick="addAmount(5000000)">5m</button>
+        <button onclick="addAmount(10000000)">10m</button>
+        <button onclick="addAmount(25000000)">25m</button>
+        <button onclick="addAmount(50000000)">50m</button>
+      </div>
+      <div class="selected-bet">
+        Đã chọn: <span id="selectedDoor">-</span> | Số tiền: <span id="selectedAmount">0</span>đ
+      </div>
+      <div id="insufficientNotice" class="notice"></div>
+      <button onclick="confirmBet()">ĐẶT CƯỢC</button>
+      <button onclick="cancelBet()">HUỶ</button>
+    </div>
+
+    <div class="timer">
+      Thời gian đặt cược: <span id="timer">40</span> giây
+    </div>
+
+    <div class="result">
+      <button onclick="openBowl()">MỞ BÁT</button>
+      <div id="diceResult"></div>
+      <div id="resultText"></div>
+    </div>
+
+    <div class="history">
+      <h3>Lịch sử phiên</h3>
+      <div id="historyContent"></div>
+    </div>
+
+    <div class="chat">
+      <h3>Trò chuyện</h3>
+      <div id="chatBox"></div>
+    </div>
+  </div>
+
+  <!-- Modal nạp tiền -->
+  <div id="depositModal" class="modal">
+    <div class="modal-content">
+      <h2>Nạp tiền</h2>
+      <input type="number" id="depositAmount" placeholder="Nhập số tiền">
+      <button onclick="deposit()">Xác nhận</button>
+      <button onclick="closeDepositModal()">Đóng</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
